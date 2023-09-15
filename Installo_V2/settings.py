@@ -73,6 +73,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 'Installo_V2.context_processors.get_category',
+                'Installo_V2.context_processors.get_product',
             ],
         },
     },
@@ -147,3 +148,5 @@ JAZZMIN_SETTINGS = {
 
 
 AUTH_USER_MODEL = 'custom_user.User'
+
+USE_THOUSAND_SEPARATOR = True
