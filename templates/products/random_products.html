@@ -1,0 +1,27 @@
+<h2 class="display-6 py-5 text-center">
+    Recomandari
+</h2>
+
+<div class="d-flex justify-content-between align-items-center flex-column flex-lg-row my-5">
+
+    {% for product1 in random_products %}
+        {#    Aici trebuie un for  #}
+        <div class="card m-2 ml-3 mr-3">
+
+            <a href="{% url 'product-detail' product1.slug product1.id %}" class="btn btn-transparent">
+                <img src="{{ product1.image.url }}" class="card-img-top" height="300" alt="Product" style="height:285px; width: 285px;"/>
+                {# Imagine produs #}
+            </a>
+            <div class="card-body">
+                <p class="card-text fw-bold">
+                    {{ product1.name }} {# Nume Produs #}
+                </p>
+                <small class="text-secondary">
+                    {{ product1.price }} RON
+                </small>
+            </div>
+
+        </div>
+    {% endfor %}
+
+</div>

@@ -9,21 +9,27 @@
     <div class="container-fluid col-md-12">
         <div class="row">
             {% for product in products %}
-                <div class="col-md-2 mb-3 mt-3 ml-2 mr-3">
-                    <div class="card" style="width: 18rem;">
+                <div class="col-lg-2 col-md-4 col-sm-6 max-auto mb-4">
+                    <div class="card h-100" style="width: 18rem;">
 
-                        <img src="#" class="card-img-top" alt="...">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="Poza" style="height:285px; width: 285px;">
+                        {% else %}
+                        <img src="{% static 'default/default_product.png' %}" class="card-img-top" alt="Poza">
+                        {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <p class="card-text">{{ product.description }}</p></p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{ product.price}} RON</li>
-                            <li class="list-group-item">{{ product.stock}} produse pe stock</li>
-                            <li class="list-group-item">Categoria: {{ product.category}}</li>
+                            <li class="list-group-item">{{ product.price }} RON</li>
+                            <li class="list-group-item">{{ product.stock }} produse pe stock</li>
+                            <li class="list-group-item">Categoria: {{ product.category }}</li>
                         </ul>
                         <div class="card-body">
-                            <a href="{% url 'product-detail' product.slug product.id  %}" class="btn btn-primary">Vezi produsu</a>
+                            <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary">
+                                See Product
+                            </a>
                         </div>
 
                     </div>
@@ -33,61 +39,11 @@
         </div>
     </div>
 
-{% endblock %}
 
-{#    <div class="container-fluid col-md-12">#}
-{#        <div class="row">#}
-{#            {% for trainer in all_trainers %}#}
-{#                <div class="col-md-4">#}
-{#                    <div class="card">#}
-{#                        {% if trainer.profile %}#}
-{#                            <img src="{{ trainer.profile.url }}" class="card-img-top" alt="Poza nu exista!">#}
-{#                        {% else %}#}
-{#                            <img src="{% static 'images/image_trainer.png' %}" class="card-img-top"#}
-{#                                 alt="Poza nu exista!">#}
-{#                        {% endif %}#}
-{#                        <div class="card-body">#}
-{#                            <h5 class="card-title">#}
-{#                                {{ trainer.first_name }}#}
-{#                                {{ trainer.last_name }}</h5>#}
-{#                            <p class="card-text">#}
-{#                                {{ trainer.course|upper }} <br>#}
-{#                                {{ trainer.email }} <br>#}
-{#                                {{ trainer.department|upper }}#}
-{#                            </p>#}
-{#                            {% if perms.trainer.change_trainer or perms.trainer.delete_trainer or perms.trainer.view_trainer %}#}
-{#                                <div class="dropdown">#}
-{#                                <button class="btn btn-secondary dropdown-toggle" type="button"#}
-{#                                        data-bs-toggle="dropdown"#}
-{#                                        aria-expanded="false">#}
-{#                                    More actions#}
-{#                                </button>#}
-{##}
-{#                                <ul class="dropdown-menu">#}
-{#                                {% if perms.trainer.change_trainer %}#}
-{#                                    <li><a class="dropdown-item" href="{% url 'update-trainer' trainer.id %}">Update</a>#}
-{#                                    </li>#}
-{#                                {% endif %}#}
-{#                                {% if perms.trainer.delete_trainer %}#}
-{#                                    <li><a class="dropdown-item" href="{% url 'delete-trainer' trainer.id %}">Delete</a>#}
-{#                                    </li>#}
-{#                                {% endif %}#}
-{#                                {% if perms.trainer.view_trainer %}#}
-{#                                    <li><a class="dropdown-item" href="{% url 'detail-trainer' trainer.id %}">More#}
-{#                                        Details</a></li>#}
-{#                                {% endif %}#}
-{#                            {% else %}#}
-{#                                <div class="text-center">No actions available!</div>#}
-{#                            {% endif %}#}
-{#                            </ul>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{##}
-{#    </div>#}
-{##}
-{##}
-{#{% endblock %}#}
+
+
+
+
+    {% include 'products/random_products.html'%}
+
+{% endblock %}

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'category',
     'products',
     'carts',
+    'store',
 
 ]
 
@@ -74,6 +75,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 'Installo_V2.context_processors.get_category',
                 'Installo_V2.context_processors.get_product',
+                'Installo_V2.context_processors.random_products',
             ],
         },
     },
@@ -150,3 +152,6 @@ JAZZMIN_SETTINGS = {
 AUTH_USER_MODEL = 'custom_user.User'
 
 USE_THOUSAND_SEPARATOR = True
+
+LOGIN_REDIRECT_URL = 'homepage'
+# LOGOUT_REDIRECT_URL = ''

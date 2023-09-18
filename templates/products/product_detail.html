@@ -5,94 +5,104 @@
 {% block content %}
 
     <div class="row py-5 g-5">
-    <div class="col-md-12 col-lg-6">
-        <img src="#" class="m1 w-100 sliderMainPage" data-bs-toggle="modal" data-bs-target="#imageModel" alt="Poza"/>
-    </div>
-    <div class="col-12 col-lg-6">
-        <h2 id="productName">
-            {{ product.name }}
-        </h2>
-        <small class="text-muted">
-            Article 1
-        </small>
-        <h4 class="my-4">
-            <span id="price">{{ product.price }}</span>
-            RON
-        </h4>
-
-        <div class="d-grid my-4">
-            <input type="number" value="1" name="" id="product-quantity" class="product-quantity mb-2 text-center" style="width: 65px; height: 25px; border-radius: 25px; border-color: black;">
-
-            <input type="hidden" value="{{ product.id }}" name="" id="" style="width: 65px; height: 25px;" class="product-id mb-2">
-            <input type="hidden" value="{{ product.title }}" name="" id="" style="width: 65px; height: 25px;" class="product-title mb-2">
-
-            <button class="btn btn-lg btn-dark add-to-cart-btn" type="button" id="bagBtn">
-                Adauga in cos
-            </button>
+        <div class="col-md-12 col-lg-6">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" class="m1 w-100 sliderMainPage" data-bs-toggle="modal"
+                     data-bs-target="#imageModel" alt="Poza"/>
+            {% else %}
+                <img src="{% static 'default/default_product.png' %}" class="m1 w-100 sliderMainPage"
+                     data-bs-toggle="modal" data-bs-target="#imageModel" alt="Poza"/>
+            {% endif %}
         </div>
+        <div class="col-12 col-lg-6">
+            <h2 id="productName">
+                {{ product.name }}
+            </h2>
+            <small class="text-muted">
+                Article 1
+            </small>
+            <h4 class="my-4">
+                <span id="price">{{ product.price }}</span>
+                RON
+            </h4>
 
-        <div class="accordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <strong>
-                            Descriere
-                        </strong>
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        {{ product.description }}
-                    </div>
-                </div>
+            <div class="d-grid my-4">
+                <input type="number" value="1" name="" id="product-quantity" class="product-quantity mb-2 text-center"
+                       style="width: 65px; height: 25px; border-radius: 25px; border-color: black;">
+
+                <input type="hidden" value="{{ product.id }}" name="" id="" style="width: 65px; height: 25px;"
+                       class="product-id mb-2">
+                <input type="hidden" value="{{ product.title }}" name="" id="" style="width: 65px; height: 25px;"
+                       class="product-title mb-2">
+
+                <button class="btn btn-lg btn-dark add-to-cart-btn" type="button" id="bagBtn">
+                    Adauga in cos
+                </button>
             </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <strong>
-                            Disponibilitate
-                        </strong>
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingOne">
-                    <div class="accordion-body">
-                        {% if product.stock > 0 %}
-                            Este in stock
-                        {% else %}
-                            Nu este disponibil
-                        {% endif %}
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>
+                                Descriere
+                            </strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            {{ product.description }}
+                        </div>
                     </div>
                 </div>
 
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>
+                                Disponibilitate
+                            </strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            {% if product.stock > 0 %}
+                                Este in stock
+                            {% else %}
+                                Nu este disponibil
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <h2 class="display-6 py-5 text-center">
-        Recomandari
-    </h2>
-
-    <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row my-5">
-
-
-        {#    Aici trebuie un for  #}
-        <div class="card m-2">
-            <a href="#">
-                <img src="#" class="card-img-top" height="300" alt="Product"/> {# Imagine produs #}
-            </a>
-            <div class="card-body">
-                <p class="card-text fw-bold">
-                    Ceva nume produs  {# Nume Produs #}
-                </p>
-                <small class="text-secondary">
-                    Pret in RON  {# Pret Produs #}
-                </small>
-            </div>
+{#        <h2 class="display-6 py-5 text-center">#}
+{#            Recomandari#}
+{#        </h2>#}
+{##}
+{#        <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row my-5">#}
+{##}
+{##}
+            {#    Aici trebuie un for  #}
+{#            <div class="card m-2">#}
+{#                <a href="#">#}
+{#                    <img src="#" class="card-img-top" height="300" alt="Product"/> {# Imagine produs #}
+{#                </a>#}
+{#                <div class="card-body">#}
+{#                    <p class="card-text fw-bold">#}
+{#                        Ceva nume produs {# Nume Produs #}
+{#                    </p>#}
+{#                    <small class="text-secondary">#}
+{#                        Pret in RON {# Pret Produs #}
+{#                    </small>#}
+{#                </div>#}
+{#            </div>#}
+    {% include 'products/random_products.html' %}
         </div>
-    </div>
 
     </div>
 
