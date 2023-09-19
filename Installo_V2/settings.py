@@ -29,7 +29,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Imported apps
+    'django_filters',
     'jazzmin',
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -76,6 +79,7 @@ TEMPLATES = [
                 'Installo_V2.context_processors.get_category',
                 'Installo_V2.context_processors.get_product',
                 'Installo_V2.context_processors.random_products',
+                'Installo_V2.context_processors.get_carousel',
             ],
         },
     },
@@ -147,7 +151,6 @@ JAZZMIN_SETTINGS = {
     'copyright': 'Liviu Gheorghe',
 
 }
-
 
 AUTH_USER_MODEL = 'custom_user.User'
 

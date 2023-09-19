@@ -1,10 +1,10 @@
 from django.db import models
-
+from autoslug import AutoSlugField
 
 class Category(models.Model):
 
     name = models.CharField(max_length=150, unique=True)
-    slug = models.SlugField(max_length=50)
+    slug = AutoSlugField(populate_from='name')
     description = models.TextField(max_length=1000)
     parent = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True, related_name='sub_category')
 

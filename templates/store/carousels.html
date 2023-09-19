@@ -1,0 +1,33 @@
+<div class="container text-center mt-5">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            {% for carousel in carousels %}
+                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+            {% endfor %}
+        </ul>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            {% for carousel in carousels %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <a href="{{ carousel.link }}">
+                        <img src="{{ carousel.image.url }}" alt="Image {{ forloop.counter }}" class="img-fluid">
+                    </a>
+                    <div class="carousel-caption">
+{#                        <h3>{{ carousel.title }}</h3>#}
+{#                        <p>{{ carousel.sub_title }}</p>#}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>

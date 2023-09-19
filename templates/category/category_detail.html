@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+
+{% block content %}
+<br><br><br><br>
+    {# Banner #}
+{#    <img src="#" class="w-100" alt="Banner"/>#}
+{#    <div class="position-absolute top-50 start-50 translate-middle-x w-100 px-3">#}
+    <div class="container-fluid text-center">
+        <h1 class="display-4">{{ category.name }}</h1> {# Name of category list #}
+    </div>
+<br><br><br><br>
+    <div class="row">
+        <div class="col col-lg-3 text-start">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    {# Left Menu #}
+                    <a href="#" class="nav-link text-muted">
+                        Night
+                    </a>
+                    <a href="#" class="nav-link text-muted">
+                        Night
+                    </a>
+                    <a href="#" class="nav-link text-muted">
+                        Night
+                    </a>
+                    <a href="#" class="nav-link text-muted">
+                        Night
+                    </a>
+                    <a href="#" class="nav-link text-muted">
+                        Night
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+{# Product Cards #}
+<div class="col col-9 d-flex flex-wrap justify-content-between">
+    {# Loop through the products, paginated #}
+    {% for product in products %}
+    <div class="card h-100">
+        {# Product Image Container with fixed aspect ratio #}
+        <div class="card-img-container text-center" >
+            <a href="{% url 'product-detail' product.slug product.id %}">
+                <img src="{{ product.image.url }}" class="card-img-top " alt="Product" style="width: 200px; height:200px"/>
+            </a>
+        </div>
+        {# Product Body #}
+        <div class="card-body">
+            {# Product Name #}
+            <h5 class="card-title">
+                {{ product.name|truncatechars:30 }}
+            </h5>
+            <p class="card-text">
+                {{ product.description|truncatechars:10 }}
+            </p>
+            {# Product Price #}
+            <small class="card-footer m-3" style="border-radius: 10px">
+                {{ product.price }} RON
+            </small>
+            <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary ">Go to product</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{# Pagination #}
+<div class="col-12 mt-4 mb-4">
+    <div class="pagination justify-content-center">
+        <span class="step-links">
+            {% if products.has_previous %}
+                <a href="?page=1" class="btn btn-primary m-1">&laquo; first</a>
+                <a href="?page={{ products.previous_page_number }}" class="btn btn-primary m-1 ">previous</a>
+            {% endif %}
+            <span class="current-page btn btn-primary m-1 text" >{{ products.number }}</span>
+            {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}" class="btn btn-primary m-1 ">next</a>
+                <a href="?page={{ products.paginator.num_pages }}" class="btn btn-primary m-1 ">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+    <br>
+    <br>
+    <br>
+
+
+    </div>
+
+{% endblock %}

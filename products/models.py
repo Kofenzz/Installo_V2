@@ -1,3 +1,4 @@
+from autoslug import AutoSlugField
 from django.db import models
 
 from category.models import Category
@@ -5,8 +6,8 @@ from category.models import Category
 
 class Products(models.Model):
     name = models.CharField(max_length=100, unique=True, null=False)
-    slug = models.SlugField(max_length=50)
-    description = models.TextField(max_length=1000, null=False)
+    slug = AutoSlugField(populate_from='name')
+    description = models.TextField(max_length=2000, null=False)
     price = models.IntegerField(default=0)
     stock = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)

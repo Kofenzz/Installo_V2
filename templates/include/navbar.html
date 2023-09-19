@@ -16,25 +16,23 @@
                         Category
                     </a>
                     <ul class="dropdown-menu">
-                        {% for category in categories %}
-                            {% if not category.parent %}
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item " href="#" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">{{ category.name }}</a>
-                                </li>
-                            {% else %}
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">{{ category.name }}</a>
-                                    {% for subcategory in categories %}
-
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">{{ subcategory.name }}</a></li>
-                                        </ul>
-                                    {% endfor %}
-                                </li>
-                            {% endif %}
-                        {% endfor %}
+               {% for category in categories %}
+                {% if not category.parent %}
+                    {% if category.sub_category.all %}
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="{% url 'category_view' category.slug %}" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">{{ category.name }}</a>
+                            <ul class="dropdown-menu">
+                                {% for subcategory in category.sub_category.all %}
+                                    <li><a class="dropdown-item" href="{% url 'category_view' subcategory.slug %}">{{ subcategory.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'category_view' category.slug %}">{{ category.name }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
                     </ul>
 
 
@@ -44,8 +42,10 @@
                 </li>
 
             </ul>
-            <form class="d-flex mx-auto  " role="search" id=navBarSearchForm>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- Search Form -->
+            <form class="d-flex mx-auto" method="get" action="#">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
 
@@ -59,6 +59,10 @@
                     <a href="{% url 'signup' %}" class="btn btn-outline-secondary">Sign up</a>
                 </div>
             {% endif %}
+
+            <div>
+                <a href="#" class="btn btn-outline-info">Cart</a>
+            </div>
         </div>
     </div>
 </nav>
