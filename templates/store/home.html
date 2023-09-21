@@ -19,7 +19,7 @@
                 <img src="{% static 'default/default_product.png' %}" class="card-img-top" alt="Poza">
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name|truncatechars:15 }}</h5>
+                    <h5 class="card-title">{{ product.name|truncatechars:20 }}</h5>
                     <p class="card-text">{{ product.description|truncatechars:30 }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -28,8 +28,11 @@
                     <li class="list-group-item">Categoria: {{ product.category|truncatechars:10 }}</li>
                 </ul>
                 <div class="card-body">
-                    <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary">
+                    <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary m-1">
                         See Product
+                    </a>
+                    <a href="#" class="btn btn-primary m-1 addToCart" data-product-id="{{ product.id }}" >
+                        Add to cart
                     </a>
                 </div>
             </div>

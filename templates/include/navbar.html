@@ -16,23 +16,27 @@
                         Category
                     </a>
                     <ul class="dropdown-menu">
-               {% for category in categories %}
-                {% if not category.parent %}
-                    {% if category.sub_category.all %}
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="{% url 'category_view' category.slug %}" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">{{ category.name }}</a>
-                            <ul class="dropdown-menu">
-                                {% for subcategory in category.sub_category.all %}
-                                    <li><a class="dropdown-item" href="{% url 'category_view' subcategory.slug %}">{{ subcategory.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li><a class="dropdown-item" href="{% url 'category_view' category.slug %}">{{ category.name }}</a></li>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+                        {% for category in categories %}
+                            {% if not category.parent %}
+                                {% if category.sub_category.all %}
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle"
+                                           href="{% url 'category_view' category.slug %}" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">{{ category.name }}</a>
+                                        <ul class="dropdown-menu">
+                                            {% for subcategory in category.sub_category.all %}
+                                                <li><a class="dropdown-item"
+                                                       href="{% url 'category_view' subcategory.slug %}">{{ subcategory.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li><a class="dropdown-item"
+                                           href="{% url 'category_view' category.slug %}">{{ category.name }}</a></li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </ul>
 
 
@@ -48,10 +52,23 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <!-- Cart -->
+            <div class="cart m-2">
+                <h4>{{ request.user.first_name }}</h4>
+
+                <a href="{% url 'cart' %}" style="color:white; text-decoration:none">
+                    <div class="cart-container">
+                        <div class="cartitems text-black"><p id="num_of_items">{{ cart.num_of_items }}</p></div>
+                        <i class="bi bi-cart text-primary"></i>
+                    </div>
+                </a>
+
+            </div>
 
             {% if user.is_authenticated %}
                 <div>
                     <a href="{% url 'logout' %}" class="btn btn-outline-secondary">Logout, {{ user.first_name }}</a>
+                    <a href="#" class='btn btn-outline-primary'>My Account</a>
                 </div>
             {% else %}
                 <div>
@@ -60,9 +77,5 @@
                 </div>
             {% endif %}
 
-            <div>
-                <a href="#" class="btn btn-outline-info">Cart</a>
-            </div>
         </div>
-    </div>
 </nav>

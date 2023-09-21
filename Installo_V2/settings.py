@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     # Imported apps
     'django_filters',
     'jazzmin',
-
+    'django.contrib.humanize',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
 
     'category',
     'products',
-    'carts',
     'store',
 
 ]
@@ -80,6 +79,7 @@ TEMPLATES = [
                 'Installo_V2.context_processors.get_product',
                 'Installo_V2.context_processors.random_products',
                 'Installo_V2.context_processors.get_carousel',
+                'Installo_V2.context_processors.get_num_of_items'
             ],
         },
     },
@@ -154,7 +154,7 @@ JAZZMIN_SETTINGS = {
 
 AUTH_USER_MODEL = 'custom_user.User'
 
-USE_THOUSAND_SEPARATOR = True
+USE_THOUSAND_SEPARATOR = False
 
 LOGIN_REDIRECT_URL = 'homepage'
 # LOGOUT_REDIRECT_URL = ''
