@@ -33,5 +33,5 @@ def get_num_of_items(request):
     return {'cart': cart}
 
 def get_search_context(request):
-    form = ProductSearchForm()
-    return {'form': form}
+    search = ProductSearchForm()
+    return {'search': search}

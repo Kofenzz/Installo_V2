@@ -33,7 +33,7 @@ def cart(request):
     return render(request, 'products/cart.html', context)
 
 
-def add_to_cart(request,slug,id):
+def add_to_cart(request, *args, **kwargs):
     data = json.loads(request.body)
     product_id = data['id']
     product = Products.objects.get(id=product_id)

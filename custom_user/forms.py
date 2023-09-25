@@ -1,9 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
-from django.forms import TextInput
-import random
-
 from custom_user.models import User
+
 
 #
 # class AuthenticationNewForm(AuthenticationForm):
@@ -19,11 +17,9 @@ from custom_user.models import User
 
 class UserForm(UserCreationForm):
     class Meta:
-
         model = User
         fields = ['last_name', 'first_name', 'email', 'phone_number',
-                  'password1','password2',]
-
+                  'password1', 'password2', ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,17 +31,17 @@ class UserForm(UserCreationForm):
             'class': 'form-control', 'placeholder': 'Retype your password'
         })
         self.fields['last_name'].widget.attrs.update({
-            'class': 'form-control', 'placeholder': 'Enter your last name'
+            'class': 'form-control', 'placeholder': 'Enter your last name', 'style': 'width:100%'
         })
         self.fields['first_name'].widget.attrs.update({
-            'class': 'form-control', 'placeholder': "Enter your first name"
+            'class': 'form-control', 'placeholder': "Enter your first name", 'style': 'width:100%'
         })
         (self.fields['email'].widget.attrs.update({
             'class': 'form-control', 'placeholder': 'Enter your email address'
         }),
          self.fields['phone_number'].widget.attrs.update({
-            'class': 'form-control', 'placeholder': 'Enter your phone number'
-        }))
+             'class': 'form-control', 'placeholder': 'Enter your phone number'
+         }))
 
 
 class LoginForm(AuthenticationForm):
@@ -53,9 +49,6 @@ class LoginForm(AuthenticationForm):
         super().__init__(*args, **kwargs)
 
         self.fields['username'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your email'})
+            {'class': 'form-control', 'placeholder': 'Please enter your email', 'style': 'width:100%'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form-control', 'placeholder': 'Please enter your password'})
-
-
-
