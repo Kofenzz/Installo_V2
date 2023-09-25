@@ -7,42 +7,43 @@
 {% block content %}
 
     {% include 'store/carousels.html' %}
-<br><br>
-<div class="container-fluid">
-    <div class="row">
-        {% for product in products %}
-        <div class="col-md-2 m-2 mx-auto">
-            <div class="card h-100" style="width: 18rem;">
-                {% if product.image %}
-                <img src="{{ product.image.url }}" class="card-img-top" alt="Poza">
-                {% else %}
-                <img src="{% static 'default/default_product.png' %}" class="card-img-top" alt="Poza">
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-2 m-2 mx-auto">
+                    <div class="card h-100" style="width: 18rem;">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" class="card-img-top" alt="Poza">
+                        {% else %}
+                            <img src="{% static 'default/default_product.png' %}" class="card-img-top" alt="Poza">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name|truncatechars:20 }}</h5>
+                            <p class="card-text">{{ product.description|truncatechars:30 }}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ product.price }} RON</li>
+                            <li class="list-group-item">{{ product.stock }} produse pe stock</li>
+                            <li class="list-group-item">Categoria: {{ product.category|truncatechars:10 }}</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary m-1">
+                                See Product
+                            </a>
+                            <a href="#" class="btn btn-primary m-1 addToCart" data-product-id="{{ product.id }}">
+                                Add to cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                    </div>
+                    <div class="row">
                 {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.name|truncatechars:20 }}</h5>
-                    <p class="card-text">{{ product.description|truncatechars:30 }}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ product.price }} RON</li>
-                    <li class="list-group-item">{{ product.stock }} produse pe stock</li>
-                    <li class="list-group-item">Categoria: {{ product.category|truncatechars:10 }}</li>
-                </ul>
-                <div class="card-body">
-                    <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary m-1">
-                        See Product
-                    </a>
-                    <a href="#" class="btn btn-primary m-1 addToCart" data-product-id="{{ product.id }}" >
-                        Add to cart
-                    </a>
-                </div>
+            {% endfor %}
             </div>
-        </div>
-        {% if forloop.counter|divisibleby:4 and not forloop.last %}
-    </div><div class="row">
-        {% endif %}
-        {% endfor %}
     </div>
-</div>
 
 
 
@@ -50,6 +51,6 @@
 
 
 
-    {% include 'products/random_products.html'%}
+    {% include 'products/random_products.html' %}
 
 {% endblock %}

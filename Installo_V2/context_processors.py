@@ -2,6 +2,7 @@
 import random
 
 from category.models import Category
+from products.forms import ProductSearchForm
 from products.models import Products, Cart
 from store.models import Carousels
 
@@ -30,3 +31,7 @@ def get_num_of_items(request):
     if request.user.is_authenticated:
         cart, created = Cart.objects.get_or_create(user=request.user, completed=False)
     return {'cart': cart}
+
+def get_search_context(request):
+    form = ProductSearchForm()
+    return {'form': form}

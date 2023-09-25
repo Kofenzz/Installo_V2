@@ -3,6 +3,7 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
+from products.forms import ProductSearchForm
 from products.models import Products, Cart, CartItems
 
 
@@ -32,7 +33,7 @@ def cart(request):
     return render(request, 'products/cart.html', context)
 
 
-def add_to_cart(request):
+def add_to_cart(request,slug,id):
     data = json.loads(request.body)
     product_id = data['id']
     product = Products.objects.get(id=product_id)
@@ -97,3 +98,30 @@ def delete_cart_item(request, product_id):
         # If the cart item does not exist, return an error message
         response_data = {'message': 'Product not found in cart'}
         return JsonResponse(response_data, status=404)
+
+
+def product_search(request):
+
+    # Initialize an empty list for search reulsts
+    search_results = []
+
+    if request.method == 'GET':
+        form = ProductSearchForm(request.GET)
+        if form.is_valid():
+            search_query = form.cleaned_data.get('search')
+
+            if search_query:
+                search_results = Products.objects.filter (name__icontains=search_query)
+
+    return render(request, 'products/search.html', {'search_results': search_results, 'form': form})
+
+
+# @login_required()
+# def search(request):
+#     get_value = request.GET.get('filter')
+#     if get_value:
+#         students = Student.objects.filter(Q(last_name__icontains=get_value) | Q(first_name__icontains=get_value))
+#     else:
+#         students = Student.objects.all()
+#
+#     return render(request, 'student/list_of_students.html', {'all_students': students})

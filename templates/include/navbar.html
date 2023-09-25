@@ -47,23 +47,34 @@
 
             </ul>
             <!-- Search Form -->
-            <form class="d-flex mx-auto" method="get" action="#">
-                {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+            <form class="d-flex mx-auto" method="get" action="{% url 'product_search' %}">
+                {{ form.search }}
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <!-- Cart -->
+{#            <div class="cart m-2">#}
+{#                <h4>{{ request.user.first_name }}</h4>#}
+{##}
+{#                <a href="{% url 'cart' %}" style="color:white; text-decoration:none">#}
+{#                    <div class="cart-container">#}
+{#                        <div class="cartitems text-black"><p id="num_of_items">{{ cart.num_of_items }}</p></div>#}
+{#                        <i class="bi bi-cart text-primary"></i>#}
+{#                    </div>#}
+{#                </a>#}
+{##}
+{#            </div>#}
+
             <div class="cart m-2">
-                <h4>{{ request.user.first_name }}</h4>
 
                 <a href="{% url 'cart' %}" style="color:white; text-decoration:none">
-                    <div class="cart-container">
-                        <div class="cartitems text-black"><p id="num_of_items">{{ cart.num_of_items }}</p></div>
-                        <i class="bi bi-cart text-primary"></i>
-                    </div>
+
+                        <i class="bi bi-cart text-primary" id="num_of_items"> {{ cart.num_of_items }} </i>
+
                 </a>
 
             </div>
+
+
 
             {% if user.is_authenticated %}
                 <div>
@@ -78,4 +89,5 @@
             {% endif %}
 
         </div>
+    </div>
 </nav>

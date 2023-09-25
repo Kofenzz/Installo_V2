@@ -67,3 +67,28 @@ body {
 .qty i {
   font-size: 11px;
 }
+
+
+/* Style the search input field */
+input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Style the search button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the form container (optional) */
+form.d-flex {
+    align-items: center;
+}

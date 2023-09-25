@@ -1,0 +1,58 @@
+<!-- search_results.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Result for "{{ request.GET.search }}"{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <br><br>
+                <h2 class="text-center m-3 mx-auto">Search Result for "{{ request.GET.search }}"</h2>
+                <br><br>
+            </div>
+
+            <div class="row">
+                {% if search_results %}
+                    {% for product in search_results %}
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="card-img-top" alt="Poza">
+                                {% else %}
+                                    <img src="{% static 'default/default_product.png' %}" class="card-img-top"
+                                         alt="Poza">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name|truncatechars:20 }}</h5>
+                                    <p class="card-text">{{ product.description|truncatechars:30 }}</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ product.price }} RON</li>
+                                    <li class="list-group-item">{{ product.stock }} produse pe stock</li>
+                                </ul>
+                                <div class="card-body">
+                                    <a href="{% url 'product-detail' product.slug product.id %}"
+                                       class="btn btn-primary m-1">
+                                        See Product
+                                    </a>
+                                    <a href="{% url 'add_to_cart' %}" class="btn btn-primary m-1 addToCart"
+                                       data-product-id="{{ product.id }}">
+                                        Add to cart
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-lg-12">
+                        <h2 class="text-center m-3 mx-auto"> No Results </h2>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
