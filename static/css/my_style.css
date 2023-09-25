@@ -92,3 +92,73 @@ button[type="submit"] {
 form.d-flex {
     align-items: center;
 }
+
+
+
+
+.custom-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-toggle {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-down::after {
+    content: "▼"; /* Arrow-down symbol */
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.main-category > a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.sub-categories {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.custom-dropdown:hover .sub-categories {
+    display: block;
+}
+
+/* Style for sub-category links */
+.sub-categories li a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Add more styles as needed for your design */

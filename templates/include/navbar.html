@@ -7,6 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
                 </li>
@@ -41,9 +43,13 @@
 
 
                 </li>
+
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+
 
             </ul>
             <!-- Search Form -->
@@ -52,23 +58,23 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <!-- Cart -->
-{#            <div class="cart m-2">#}
-{#                <h4>{{ request.user.first_name }}</h4>#}
-{##}
-{#                <a href="{% url 'cart' %}" style="color:white; text-decoration:none">#}
-{#                    <div class="cart-container">#}
-{#                        <div class="cartitems text-black"><p id="num_of_items">{{ cart.num_of_items }}</p></div>#}
-{#                        <i class="bi bi-cart text-primary"></i>#}
-{#                    </div>#}
-{#                </a>#}
-{##}
-{#            </div>#}
+            {#            <div class="cart m-2">#}
+            {#                <h4>{{ request.user.first_name }}</h4>#}
+            {##}
+            {#                <a href="{% url 'cart' %}" style="color:white; text-decoration:none">#}
+            {#                    <div class="cart-container">#}
+            {#                        <div class="cartitems text-black"><p id="num_of_items">{{ cart.num_of_items }}</p></div>#}
+            {#                        <i class="bi bi-cart text-primary"></i>#}
+            {#                    </div>#}
+            {#                </a>#}
+            {##}
+            {#            </div>#}
 
             <div class="cart m-2">
 
                 <a href="{% url 'cart' %}" style="color:white; text-decoration:none">
 
-                        <i class="bi bi-cart text-primary" id="num_of_items"> {{ cart.num_of_items }} </i>
+                    <i class="bi bi-cart text-primary" id="num_of_items"> {{ cart.num_of_items }} </i>
 
                 </a>
 
