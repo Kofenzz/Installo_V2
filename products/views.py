@@ -1,7 +1,7 @@
 import json
 
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 
 from products.models import Products, Cart, CartItems
 
@@ -45,8 +45,6 @@ def add_to_cart(request):
 
         num_of_items = cart.num_of_items  # to update in realtime the cart, with some editind in static/js/scrpts.js
 
-        print(cart_items)
-
     return JsonResponse(num_of_items, safe=False)
 
 
@@ -68,6 +66,34 @@ def update_cart_quantity(request):
         cart_item.quantity = 1
         cart_item.save()
 
-
     # If cart_item is not found, return an empty dictionary as the JSON response
     return JsonResponse({})
+
+
+def delete_cart_item(request, product_id):
+    # Get the product to be deleted or return a 404 response if not found
+    product = get_object_or_404(Products, id=product_id)
+
+    # Get the user's cart (assuming the user is authenticated)
+    cart = Cart.objects.get(user=request.user, completed=False)
+
+    try:
+        # Attempt to get the cart item corresponding to the product
+        cart_item = CartItems.objects.get(cart=cart, product=product)
+
+        # Delete the cart item
+        cart_item.delete()
+
+        # Optionally, you can update the cart total or perform any other necessary actions
+
+        # Return a JSON response to indicate success
+        response_data = {'message': 'Product removed from cart'}
+
+        # Add a flag to indicate that the page should be reloaded
+        response_data['reload_page'] = True
+
+        return redirect('cart')
+    except CartItems.DoesNotExist:
+        # If the cart item does not exist, return an error message
+        response_data = {'message': 'Product not found in cart'}
+        return JsonResponse(response_data, status=404)

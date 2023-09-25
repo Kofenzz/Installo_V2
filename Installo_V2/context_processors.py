@@ -26,6 +26,7 @@ def get_carousel(request):
 
 
 def get_num_of_items(request):
+    cart = None
     if request.user.is_authenticated:
         cart, created = Cart.objects.get_or_create(user=request.user, completed=False)
     return {'cart': cart}

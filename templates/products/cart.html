@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="d-flex align-items-center">
-                            <a href="#">
+                            <a href="{% url 'delete-cart-item' product_id=item.product.id %}">
                                 <i class="bi bi-trash mb-1 text-danger"></i> {# Delete product #}
                             </a>
                         </div>

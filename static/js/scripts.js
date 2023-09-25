@@ -42,6 +42,10 @@ function addToCart(e) {
         .then(data => {
             document.getElementById('num_of_items').innerHTML = data
             console.log(data)
+
+            if (data.reload_page) {
+                location.reload();
+            }
         })
         .catch(error => {
             console.log(error)
