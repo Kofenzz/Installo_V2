@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'category',
     'products',
     'store',
+    'orders',
 
 ]
 

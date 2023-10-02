@@ -1,6 +1,7 @@
+from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
-from custom_user.models import User
+from custom_user.models import User, Profile
 
 
 #
@@ -52,3 +53,27 @@ class LoginForm(AuthenticationForm):
             {'class': 'form-control', 'placeholder': 'Please enter your email', 'style': 'width:100%'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form-control', 'placeholder': 'Please enter your password'})
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+
+        fields = ('first_name', 'last_name', 'phone_number', 'address_1', 'address_2', 'user_type')
+
+        widgets = {
+            'first_name': forms.TextInput(
+                attrs={'class': 'form-control ', 'placeholder': 'First Name', 'style': 'width:100%'}),
+            'last_name': forms.TextInput(
+                attrs={'class': 'form-control ', 'placeholder': 'Last Name', 'style': 'width:100%'}),
+            'phone_number': forms.TextInput(
+                attrs={'class': 'form-control ', 'placeholder': 'Phone Number',
+                       'style': 'width:100%'}),
+            'address_1': forms.TextInput(
+                attrs={'class': 'form-control ', 'placeholder': 'First address line',
+                       'style': 'width:100%'}),
+            'address_2': forms.TextInput(
+                attrs={'class': 'form-control ', 'placeholder': 'Second address line',
+                       'style': 'width:100%'}),
+            'user_type': forms.Select(attrs={'class': 'form-control ', 'style': 'width:100%'})
+        }

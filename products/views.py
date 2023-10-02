@@ -114,14 +114,3 @@ def product_search(request):
                 search_results = Products.objects.filter (name__icontains=search_query)
 
     return render(request, 'products/search.html', {'search_results': search_results, 'form': form})
-
-
-# @login_required()
-# def search(request):
-#     get_value = request.GET.get('filter')
-#     if get_value:
-#         students = Student.objects.filter(Q(last_name__icontains=get_value) | Q(first_name__icontains=get_value))
-#     else:
-#         students = Student.objects.all()
-#
-#     return render(request, 'student/list_of_students.html', {'all_students': students})
