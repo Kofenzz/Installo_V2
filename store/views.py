@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
@@ -5,3 +6,9 @@ from django.views.generic import TemplateView
 
 class HomeTemplateView(TemplateView):
     template_name = 'store/home.html'
+
+
+def about_us(request):
+    return render(request, 'info/about_us.html')
+def terms(request):
+    return render(request, 'info/terms.html')
