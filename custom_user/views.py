@@ -1,4 +1,4 @@
-from django import forms
+from django.contrib import messages  # success message display on login page
 from django.contrib.auth import logout as logouts
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
@@ -6,7 +6,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from django.contrib import messages  # succes message display on login page
 
 from custom_user.forms import UserForm, LoginForm, ProfileForm
 from custom_user.models import User
@@ -19,10 +18,6 @@ class SignupView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'custom_user/register.html'
 
-    # success_message = "%(f_name)s (l_name)s ,your account has been registered."
-    #
-    # def get_success_message(self, cleaned_data):
-    #     return self.success_message % dict(cleaned_data, f_name=self.object.first_name, l_name=self.object.last_name)
 
     def form_valid(self, form):
         if form.is_valid():
@@ -62,7 +57,9 @@ def edit_profile(request):
         if form.is_valid():
             # Update the Profile model with form data
             user_profile.first_name = form.cleaned_data['first_name']
+            user_profile.first_name = user_profile.first_name.title()
             user_profile.last_name = form.cleaned_data['last_name']
+            user_profile.last_name = user_profile.last_name.title()
             user_profile.phone_number = form.cleaned_data['phone_number']
             user_profile.address_1 = form.cleaned_data['address_1']
             user_profile.address_2 = form.cleaned_data['address_2']

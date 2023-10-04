@@ -1,28 +1,28 @@
 <section style="background-color: #eee;">
 
-    <h2 class="display-6 py-5 text-center">
+    <h1 class="display-6 py-5 text-center">
         <strong>
-            We Recommand
+            New Arrivals
         </strong>
-    </h2>
+    </h1>
 
     <div class="container py-5">
         <div class="row">
-            {% for random_product in random_products %}
+            {% for new_product in new_products %}
                 <div class="col-md-6 col-lg-3 mb-4"> <!-- Adjust the column sizes for responsiveness -->
                     <div class="card h-100">
                         <!-- Remove the circle or icon div -->
-                        <img src="{{ random_product.image.url }}" class="card-img-top img-fluid" alt="Laptop"/>
+                        <img src="{{ new_product.image.url }}" class="card-img-top img-fluid" alt="Laptop"/>
                         <div class="card-body">
                             <div class="card-title" style="min-height: 100px;">
                                 <p class="small text-muted"><a
-                                        href="{% url 'category_view' random_product.category.slug %} "
-                                        class="text-muted">{{ random_product.category }}</a></p>
-                                <h6 class="mb-0">{{ random_product.name }}</h6>
+                                        href="{% url 'category_view' new_product.category.slug %} "
+                                        class="text-muted">{{ new_product.category }}</a></p>
+                                <h6 class="mb-0">{{ new_product.name }}</h6>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <p class="text-muted mb-0">Available: <span
-                                        class="fw-bold">{{ random_product.stock }}</span></p>
+                                        class="fw-bold">{{ new_product.stock }}</span></p>
                                 <div class="ms-auto text-warning">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -32,11 +32,11 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <h7 class="text-dark mb-0">{{ random_product.price }} RON</h7>
+                                <h7 class="text-dark mb-0">{{ new_product.price }} RON</h7>
                             </div>
                             <div class="d-flex justify-content-between mt-2">
-                                <a href="{% url 'product-detail' random_product.slug random_product.id %}" class="btn btn-outline-dark">See Product</a>
-                                <a href="#" class="btn btn-outline-success addToCart" data-product-id="{{ random_product.id }}"">Add to Cart</a>
+                                <a href="{% url 'product-detail' new_product.slug new_product.id%}" class="btn btn-outline-dark">See Product</a>
+                                <a href="#" class="btn btn-outline-success addToCart" data-product-id="{{ new_product.id }}">Add to Cart</a>
                             </div>
                         </div>
                     </div>

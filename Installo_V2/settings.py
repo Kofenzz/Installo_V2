@@ -82,6 +82,7 @@ TEMPLATES = [
                 'Installo_V2.context_processors.get_carousel',
                 'Installo_V2.context_processors.get_num_of_items',
                 'Installo_V2.context_processors.get_search_context',
+                'Installo_V2.context_processors.get_new_products',
             ],
         },
     },

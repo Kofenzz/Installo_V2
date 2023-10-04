@@ -133,24 +133,8 @@ function increaseQuantity(item_id) {
     };
     increase_or_decrease(data, item_id);
     //
-    // const quantityInput = $(item); // Get the input field
-    // const currentValue = parseInt(quantityInput.val());
-    // quantityInput.val(currentValue + 1);
-    // let current_number_of_items = parseInt($("#num_of_items").text())
-    // $("#num_of_items").text(current_number_of_items + 1)
+
 }
-
-// Add event listeners for "Decrease Quantity" and "Increase Quantity" buttons
-// const decreaseButtons = document.querySelectorAll(".decrease-quantity"); // Use the correct class
-// const increaseButtons = document.querySelectorAll(".increase-quantity"); // Use the correct class
-
-// decreaseButtons.forEach(button => {
-//     button.addEventListener('click', decreaseQuantity);
-// });
-
-// increaseButtons.forEach(button => {
-//     button.addEventListener('click', increaseQuantity);
-// });
 
 // Add event listener for Enter keypress on quantity input fields
 const quantityInputs = document.querySelectorAll(".quantity-input");

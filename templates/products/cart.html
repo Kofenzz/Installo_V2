@@ -1,93 +1,3 @@
-{#{% extends  'base.html' %}#}
-{##}
-{#{% block title %} My Cart{% endblock %}#}
-{##}
-{##}
-{#{% block content %}#}
-{#    <div class="container mt-5 mb-5">#}
-{#        <div class="d-flex justify-content-center row">#}
-{#            <div class="col-md-10">#}
-{#                <div class="p-2">#}
-{#                    <h4>Shopping cart</h4>#}
-{#                </div>#}
-{#                {% for item in items %}#}
-{#                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">#}
-{#                        <div class="mr-1">#}
-{#                            <a href="{% url 'product-detail' item.product.slug item.product.id %}">#}
-{#                                <img class="rounded" src="{{ item.product.image.url }}" width="70"/> {# Image #}
-{#                            </a>#}
-{##}
-{#                        </div>#}
-{##}
-{#                        <div class="d-flex flex-column align-items-center product-details">#}
-{#                            <span class="font-weight-bold">{{ item.product.name }}</span> {# Name of Product #}
-{#                        </div>#}
-{##}
-{#                        <div class="d-flex flex-row align-items-center qty">#}
-{#                            <button class="btn btn-link text-danger decrease-quantity"#}
-{#                                    onclick="decreaseQuantity({{ item.id }})">#}
-{#                                <i class="bi bi-dash"></i>#}
-{#                            </button>#}
-{#                            <input type="number" class="form-control text-grey mt-1 mr-1 ml-1 quantity-input"#}
-{#                                   data-product_id="{{ item.product_id }}"#}
-{#                                   data-cart_id="{{ item.cart_id }}"#}
-{#                                   id="quantity-{{ item.id }}"#}
-{#                                   value="{{ item.quantity }}"#}
-{#                                   min="1">#}
-{#                            <button class="btn btn-link text-success increase-quantity"#}
-{#                                    onclick="increaseQuantity({{ item.id }})"#}
-{#                                    data-product-id="{{ item.product.id }}"#}
-{#                                    data-cart-id="{{ item.cart.id }}"#}
-{#                                    data-increase="true">#}
-{#                                <i class="bi bi-plus"></i>#}
-{#                            </button>#}
-{#                        </div>#}
-{##}
-{#                        <div>#}
-{#                            <h5 class="text-grey" id="unit_price_{{ item.id }}">{{ item.product.price|floatformat:2 }}#}
-{#                                RON</h5> {# Price of product #}
-{#                        </div>#}
-{#                        <div>#}
-{#                            <h5 class="text-grey" id="amount_{{ item.id }}">{{ item.price|floatformat:2 }} RON</h5>#}
-                            {# Total of product #}
-{#                        </div>#}
-{##}
-{#                        <div class="d-flex align-items-center">#}
-{#                            <a href="{% url 'delete-cart-item' product_id=item.product.id %}">#}
-{#                                <i class="bi bi-trash mb-1 text-danger"></i> {# Delete product #}
-{#                            </a>#}
-{#                        </div>#}
-{##}
-{##}
-{#                    </div>#}
-{#                {% endfor %}#}
-{##}
-                {#                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">#}
-                {#                    <input type="text"#}
-                {#                           class="form-control border-0 gift-card"#}
-                {#                           placeholder="discount code/gift card">#}
-                {#                    <button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button>#}
-                {#                </div>#}
-{#                <br><br>#}
-{#                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">#}
-{#                    <h4 class="btn btn-success btn-block btn-lg ml-2" disabled style="pointer-events: none;">Grand Total#}
-{#                        : {{ cart.total_price }} RON</h4>#}
-{##}
-{#                </div>#}
-{#                <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">#}
-{#                    <button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay#}
-{#                    </button>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{##}
-{#{% endblock %}#}
-{##}
-{##}
-{##}
-
-
 {% extends 'base.html' %}
 
 {% block title %} My Cart{% endblock %}
@@ -99,6 +9,7 @@
             <div class="p-2">
                 <h4>Shopping cart</h4>
             </div>
+            {% if items %}
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -163,6 +74,11 @@
             <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
                 <button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button>
             </div>
+            {% else %}
+            <div class="alert alert-info" role="alert">
+                No Items Added Yet!
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
