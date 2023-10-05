@@ -9,26 +9,25 @@
     <div class="container py-5">
         <div class="row">
             {% for new_product in new_products %}
-                <div class="col-md-6 col-lg-3 mb-4"> <!-- Adjust the column sizes for responsiveness -->
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card h-100">
-                        <!-- Remove the circle or icon div -->
-                        <img src="{{ new_product.image.url }}" class="card-img-top img-fluid" alt="Laptop"/>
+                        <img src="{{ new_product.image.url }}" class="card-img-top img-fluid" alt="{{ new_product.category }}"/>
                         <div class="card-body">
                             <div class="card-title" style="min-height: 100px;">
                                 <p class="small text-muted"><a
                                         href="{% url 'category_view' new_product.category.slug %} "
-                                        class="text-muted">{{ new_product.category }}</a></p>
+                                        class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ new_product.category }}</a></p>
                                 <h6 class="mb-0">{{ new_product.name }}</h6>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <p class="text-muted mb-0">Available: <span
                                         class="fw-bold">{{ new_product.stock }}</span></p>
                                 <div class="ms-auto text-warning">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
+                                    <i class="bi bi-star"></i>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between">

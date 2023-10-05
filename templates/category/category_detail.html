@@ -5,90 +5,94 @@
 
 
 {% block content %}
-<br><br><br><br>
+    <br><br><br><br>
     {# Banner #}
-{#    <img src="#" class="w-100" alt="Banner"/>#}
-{#    <div class="position-absolute top-50 start-50 translate-middle-x w-100 px-3">#}
+    {#    <img src="#" class="w-100" alt="Banner"/>#}
+    {#    <div class="position-absolute top-50 start-50 translate-middle-x w-100 px-3">#}
     <div class="container-fluid text-center">
         <h1 class="display-4">{{ category.name }}</h1> {# Name of category list #}
     </div>
-<br><br><br><br>
+    <br><br><br><br>
     <div class="row">
-        <div class="col col-lg-3 text-start">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    {# Left Menu #}
-                    <a href="#" class="nav-link text-muted">
-                        Night
+        <div class="col-lg-3">
+            <div class="list-group" style="padding: 10px;">
+                {% for cat in categories %}
+                    <a href="{% url 'category_view' cat.slug %}"
+                       class="list-group-item list-group-item-action {% if cat.slug == category.slug %}active{% endif %}">
+                        {{ cat.name }}
                     </a>
-                    <a href="#" class="nav-link text-muted">
-                        Night
-                    </a>
-                    <a href="#" class="nav-link text-muted">
-                        Night
-                    </a>
-                    <a href="#" class="nav-link text-muted">
-                        Night
-                    </a>
-                    <a href="#" class="nav-link text-muted">
-                        Night
-                    </a>
-                </li>
-            </ul>
+                {% endfor %}
+            </div>
         </div>
 
-{# Product Cards #}
-<div class="col col-9 d-flex flex-wrap justify-content-between">
-    {# Loop through the products, paginated #}
-    {% for product in products %}
-    <div class="card h-100">
-        {# Product Image Container with fixed aspect ratio #}
-        <div class="card-img-container text-center" >
-            <a href="{% url 'product-detail' product.slug product.id %}">
-                <img src="{{ product.image.url }}" class="card-img-top " alt="Product" style="width: 200px; height:200px"/>
-            </a>
-        </div>
-        {# Product Body #}
-        <div class="card-body">
-            {# Product Name #}
-            <h5 class="card-title">
-                {{ product.name|truncatechars:30 }}
-            </h5>
-            <p class="card-text">
-                {{ product.description|truncatechars:10 }}
-            </p>
-            {# Product Price #}
-            <small class="card-footer m-3" style="border-radius: 10px">
-                {{ product.price }} RON
-            </small>
-            <a href="{% url 'product-detail' product.slug product.id %}" class="btn btn-primary ">Go to product</a>
-        </div>
-    </div>
-    {% endfor %}
 
-</div>
+        {# Product Cards #}
+        <div class="col-lg-9">
+            {# Loop through the products, paginated #}
+            {% if products %}
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card h-100">
+                                <img src="{{ product.image.url }}" class="card-img-top img-fluid"
+                                     alt="{{ product.category }}"/>
+                                <div class="card-body">
+                                    <div class="card-title" style="min-height: 100px;">
+                                        <p class="small text-muted"><a
+                                                href="{% url 'category_view' product.category.slug %} "
+                                                class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ new_product.category }}</a>
+                                        </p>
+                                        <h6 class="mb-0">{{ product.name }}</h6>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <p class="text-muted mb-0">Available: <span
+                                                class="fw-bold">{{ product.stock }}</span></p>
+                                        <div class="ms-auto text-warning">
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <h7 class="text-dark mb-0">{{ product.price }} RON</h7>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <a href="{% url 'product-detail' product.slug product.id %}"
+                                           class="btn btn-outline-dark">See Product</a>
+                                        <a href="#" class="btn btn-outline-success addToCart"
+                                           data-product-id="{{ product.id }}">Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-
-{# Pagination #}
-<div class="col-12 mt-4 mb-4">
-    <div class="pagination justify-content-center">
-        <span class="step-links">
-            {% if products.has_previous %}
-                <a href="?page=1" class="btn btn-primary m-1">&laquo; first</a>
-                <a href="?page={{ products.previous_page_number }}" class="btn btn-primary m-1 ">previous</a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <h3 class="text-center">No products found!</h3>
             {% endif %}
-            <span class="current-page btn btn-primary m-1 text" >{{ products.number }}</span>
-            {% if products.has_next %}
-                <a href="?page={{ products.next_page_number }}" class="btn btn-primary m-1 ">next</a>
-                <a href="?page={{ products.paginator.num_pages }}" class="btn btn-primary m-1 ">last &raquo;</a>
-            {% endif %}
-        </span>
-    </div>
-</div>
 
-    <br>
-    <br>
-    <br>
+        </div>
+
+
+        {# Pagination #}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 mt-4 mb-4">
+                    <div class="pagination justify-content-center">
+                        {% for num in products.paginator.page_range %}
+                            <a href="?page={{ num }}" class="btn btn-primary m-1">{{ num }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
 
 
     </div>
