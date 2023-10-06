@@ -18,7 +18,6 @@ class SignupView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'custom_user/register.html'
 
-
     def form_valid(self, form):
         if form.is_valid():
             new_register = form.save(commit=False)
@@ -26,8 +25,9 @@ class SignupView(CreateView):
             new_register.last_name = new_register.last_name.title()
             new_register.email = new_register.email.lower()
             form.save()
+            # succes message display on login page
             messages.success(self.request,
-                             f"{new_register.first_name} {new_register.last_name}, your account has been registered.")  # succes message display on login page
+                             f"{new_register.first_name} {new_register.last_name}, your account has been registered.")
             return redirect('login')
 
 

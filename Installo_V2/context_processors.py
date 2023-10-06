@@ -15,6 +15,8 @@ def get_category(request):
     return {"categories": Category.objects.all()}
 
 
+
+
 def get_product(request):
     return {"products": Products.objects.all()}
 
@@ -25,12 +27,14 @@ def random_products(request):
     random_sample = random.sample(list(products), 4)  # Change 3 to the desired number of random products
     return {'random_products': random_sample}
 
+
 def get_new_products(request):
     warnings.filterwarnings('ignore', category=RuntimeWarning, module='django.db.models.fields')
 
     products = Products.objects.all()
     sample = random.sample(list(products), 4)
-    return {'new_products' : sample}
+    return {'new_products': sample}
+
 
 def best_seller(request):
     pass
