@@ -12,3 +12,5 @@ def about_us(request):
     return render(request, 'info/about_us.html')
 def terms(request):
     return render(request, 'info/terms.html')
+def return_policy(request):
+    return render(request, 'info/return_policy.html')
