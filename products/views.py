@@ -60,14 +60,14 @@ def update_cart_quantity(request):
     if cart_item is not None and cart_item.quantity >= 1:
         cart_item.quantity = cart_item.quantity + 1 if increase else cart_item.quantity - 1
         cart_item.save()
-        # Return a dictionary as the JSON response
+        # Return a dictionary as the data response
         response_data = {'message': 'Cart item updated successfully'}  # You can customize this message as needed
         return JsonResponse(response_data)
     elif cart_item.quantity == 0 or cart_item.quantity < 0:
         cart_item.quantity = 1
         cart_item.save()
 
-    # If cart_item is not found, return an empty dictionary as the JSON response
+    # If cart_item is not found, return an empty dictionary as the data response
     return JsonResponse({})
 
 
@@ -87,7 +87,7 @@ def delete_cart_item(request, product_id):
 
         # Optionally, you can update the cart total or perform any other necessary actions
 
-        # Return a JSON response to indicate success
+        # Return a data response to indicate success
         response_data = {'message': 'Product removed from cart'}
 
         # Add a flag to indicate that the page should be reloaded

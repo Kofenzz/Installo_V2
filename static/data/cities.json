@@ -1,0 +1,1282 @@
+[
+    {
+        "city": "Bucuresti",
+        "county": "Bucuresti"
+    },
+    {
+        "city": "Cluj-Napoca",
+        "county": "Cluj"
+    },
+    {
+        "city": "Timisoara",
+        "county": "Timis"
+    },
+    {
+        "city": "Iasi",
+        "county": "Iasi"
+    },
+    {
+        "city": "Constanta",
+        "county": "Constanta"
+    },
+    {
+        "city": "Craiova",
+        "county": "Dolj"
+    },
+    {
+        "city": "Brasov",
+        "county": "Brasov"
+    },
+    {
+        "city": "Galati",
+        "county": "Galati"
+    },
+    {
+        "city": "Ploiesti",
+        "county": "Prahova"
+    },
+    {
+        "city": "Oradea",
+        "county": "Bihor"
+    },
+    {
+        "city": "Braila",
+        "county": "Braila"
+    },
+    {
+        "city": "Arad",
+        "county": "Arad"
+    },
+    {
+        "city": "Pitesti",
+        "county": "Arges"
+    },
+    {
+        "city": "Sibiu",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Bacau",
+        "county": "Bacau"
+    },
+    {
+        "city": "Targu Mures",
+        "county": "Mures"
+    },
+    {
+        "city": "Baia Mare",
+        "county": "Maramures"
+    },
+    {
+        "city": "Buzau",
+        "county": "Buzau"
+    },
+    {
+        "city": "Botosani",
+        "county": "Botosani"
+    },
+    {
+        "city": "Satu Mare",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Ramnicu Valcea",
+        "county": "Valcea"
+    },
+    {
+        "city": "Drobeta-Turnu Severin",
+        "county": "Mehedinti"
+    },
+    {
+        "city": "Suceava",
+        "county": "Suceava"
+    },
+    {
+        "city": "Piatra Neamt",
+        "county": "Neamt"
+    },
+    {
+        "city": "Targu Jiu",
+        "county": "Gorj"
+    },
+    {
+        "city": "Targoviste",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Focsani",
+        "county": "Vrancea"
+    },
+    {
+        "city": "Bistrita",
+        "county": "Bistrita-Nasaud"
+    },
+    {
+        "city": "Tulcea",
+        "county": "Tulcea"
+    },
+    {
+        "city": "Resita",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Slatina",
+        "county": "Olt"
+    },
+    {
+        "city": "Calarasi",
+        "county": "Calarasi"
+    },
+    {
+        "city": "Alba Iulia",
+        "county": "Alba"
+    },
+    {
+        "city": "Giurgiu",
+        "county": "Giurgiu"
+    },
+    {
+        "city": "Deva",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Hunedoara",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Zalau",
+        "county": "Salaj"
+    },
+    {
+        "city": "Sfantu Gheorghe",
+        "county": "Covasna"
+    },
+    {
+        "city": "Barlad",
+        "county": "Vaslui"
+    },
+    {
+        "city": "Vaslui",
+        "county": "Vaslui"
+    },
+    {
+        "city": "Roman",
+        "county": "Neamt"
+    },
+    {
+        "city": "Turda",
+        "county": "Cluj"
+    },
+    {
+        "city": "Medias",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Slobozia",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Alexandria",
+        "county": "Teleorman"
+    },
+    {
+        "city": "Voluntari",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Lugoj",
+        "county": "Timis"
+    },
+    {
+        "city": "Medgidia",
+        "county": "Constanta"
+    },
+    {
+        "city": "Onesti",
+        "county": "Bacau"
+    },
+    {
+        "city": "Miercurea Ciuc",
+        "county": "Harghita"
+    },
+    {
+        "city": "Sighetu Marmatiei",
+        "county": "Maramures"
+    },
+    {
+        "city": "Petrosani",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Mangalia",
+        "county": "Constanta"
+    },
+    {
+        "city": "Tecuci",
+        "county": "Galati"
+    },
+    {
+        "city": "Odorheiu Secuiesc",
+        "county": "Harghita"
+    },
+    {
+        "city": "Ramnicu Sarat",
+        "county": "Buzau"
+    },
+    {
+        "city": "Pascani",
+        "county": "Iasi"
+    },
+    {
+        "city": "Dej",
+        "county": "Cluj"
+    },
+    {
+        "city": "Reghin",
+        "county": "Mures"
+    },
+    {
+        "city": "Navodari",
+        "county": "Constanta"
+    },
+    {
+        "city": "Campina",
+        "county": "Prahova"
+    },
+    {
+        "city": "Mioveni",
+        "county": "Arges"
+    },
+    {
+        "city": "Campulung",
+        "county": "Arges"
+    },
+    {
+        "city": "Caracal",
+        "county": "Olt"
+    },
+    {
+        "city": "Sacele",
+        "county": "Brasov"
+    },
+    {
+        "city": "Fagaras",
+        "county": "Brasov"
+    },
+    {
+        "city": "Fetesti",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Sighisoara",
+        "county": "Mures"
+    },
+    {
+        "city": "Borsa",
+        "county": "Maramures"
+    },
+    {
+        "city": "Rosiorii de Vede",
+        "county": "Teleorman"
+    },
+    {
+        "city": "Curtea de Arges",
+        "county": "Arges"
+    },
+    {
+        "city": "Sebes",
+        "county": "Alba"
+    },
+    {
+        "city": "Husi",
+        "county": "Vaslui"
+    },
+    {
+        "city": "Falticeni",
+        "county": "Suceava"
+    },
+    {
+        "city": "Pantelimon",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Oltenita",
+        "county": "Calarasi"
+    },
+    {
+        "city": "Turnu Magurele",
+        "county": "Teleorman"
+    },
+    {
+        "city": "Caransebes",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Dorohoi",
+        "county": "Botosani"
+    },
+    {
+        "city": "Vulcan",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Radauti",
+        "county": "Suceava"
+    },
+    {
+        "city": "Zarnesti",
+        "county": "Brasov"
+    },
+    {
+        "city": "Lupeni",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Aiud",
+        "county": "Alba"
+    },
+    {
+        "city": "Petrila",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Campia Turzii",
+        "county": "Cluj"
+    },
+    {
+        "city": "Buftea",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Tarnaveni",
+        "county": "Mures"
+    },
+    {
+        "city": "Popesti-Leordeni",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Moinesti",
+        "county": "Bacau"
+    },
+    {
+        "city": "Codlea",
+        "county": "Brasov"
+    },
+    {
+        "city": "Cugir",
+        "county": "Alba"
+    },
+    {
+        "city": "Carei",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Gherla",
+        "county": "Cluj"
+    },
+    {
+        "city": "Blaj",
+        "county": "Alba"
+    },
+    {
+        "city": "Comanesti",
+        "county": "Bacau"
+    },
+    {
+        "city": "Motru",
+        "county": "Gorj"
+    },
+    {
+        "city": "Targu Neamt",
+        "county": "Neamt"
+    },
+    {
+        "city": "Moreni",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Targu Secuiesc",
+        "county": "Covasna"
+    },
+    {
+        "city": "Gheorgheni",
+        "county": "Harghita"
+    },
+    {
+        "city": "Orastie",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Bals",
+        "county": "Olt"
+    },
+    {
+        "city": "Baicoi",
+        "county": "Prahova"
+    },
+    {
+        "city": "Dragasani",
+        "county": "Valcea"
+    },
+    {
+        "city": "Salonta",
+        "county": "Bihor"
+    },
+    {
+        "city": "Bailesti",
+        "county": "Dolj"
+    },
+    {
+        "city": "Calafat",
+        "county": "Dolj"
+    },
+    {
+        "city": "Cernavoda",
+        "county": "Constanta"
+    },
+    {
+        "city": "Filiasi",
+        "county": "Dolj"
+    },
+    {
+        "city": "Campulung Moldovenesc",
+        "county": "Suceava"
+    },
+    {
+        "city": "Corabia",
+        "county": "Olt"
+    },
+    {
+        "city": "Adjud",
+        "county": "Vrancea"
+    },
+    {
+        "city": "Breaza",
+        "county": "Prahova"
+    },
+    {
+        "city": "Bocsa",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Marghita",
+        "county": "Bihor"
+    },
+    {
+        "city": "Baia Sprie",
+        "county": "Maramures"
+    },
+    {
+        "city": "Bragadiru",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Ludus",
+        "county": "Mures"
+    },
+    {
+        "city": "Urziceni",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Viseu de Sus",
+        "county": "Maramures"
+    },
+    {
+        "city": "Rasnov",
+        "county": "Brasov"
+    },
+    {
+        "city": "Buhusi",
+        "county": "Bacau"
+    },
+    {
+        "city": "Stefanesti",
+        "county": "Arges"
+    },
+    {
+        "city": "Brad",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Simleu Silvaniei",
+        "county": "Salaj"
+    },
+    {
+        "city": "Vatra Dornei",
+        "county": "Suceava"
+    },
+    {
+        "city": "Mizil",
+        "county": "Prahova"
+    },
+    {
+        "city": "Cisnadie",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Pucioasa",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Chitila",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Zimnicea",
+        "county": "Teleorman"
+    },
+    {
+        "city": "Toplita",
+        "county": "Harghita"
+    },
+    {
+        "city": "Otopeni",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Ovidiu",
+        "county": "Constanta"
+    },
+    {
+        "city": "Gura Humorului",
+        "county": "Suceava"
+    },
+    {
+        "city": "Gaesti",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Vicovu de Sus",
+        "county": "Suceava"
+    },
+    {
+        "city": "Tandarei",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Ocna Mures",
+        "county": "Alba"
+    },
+    {
+        "city": "Bolintin-Vale",
+        "county": "Giurgiu"
+    },
+    {
+        "city": "Avrig",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Pecica",
+        "county": "Arad"
+    },
+    {
+        "city": "Simeria",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Moldova Noua",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Sannicolau Mare",
+        "county": "Timis"
+    },
+    {
+        "city": "Valenii de Munte",
+        "county": "Prahova"
+    },
+    {
+        "city": "Darmanesti",
+        "county": "Bacau"
+    },
+    {
+        "city": "Dabuleni",
+        "county": "Dolj"
+    },
+    {
+        "city": "Comarnic",
+        "county": "Prahova"
+    },
+    {
+        "city": "Negresti-Oas",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Rovinari",
+        "county": "Gorj"
+    },
+    {
+        "city": "Scornicesti",
+        "county": "Olt"
+    },
+    {
+        "city": "Targu Lapus",
+        "county": "Maramures"
+    },
+    {
+        "city": "Sacueni",
+        "county": "Bihor"
+    },
+    {
+        "city": "Videle",
+        "county": "Teleorman"
+    },
+    {
+        "city": "Santana",
+        "county": "Arad"
+    },
+    {
+        "city": "Oravita",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Targu Ocna",
+        "county": "Bacau"
+    },
+    {
+        "city": "Calan",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Boldesti-Scaeni",
+        "county": "Prahova"
+    },
+    {
+        "city": "Magurele",
+        "county": "Ilfov"
+    },
+    {
+        "city": "Harlau",
+        "county": "Iasi"
+    },
+    {
+        "city": "Draganesti-Olt",
+        "county": "Olt"
+    },
+    {
+        "city": "Jimbolia",
+        "county": "Timis"
+    },
+    {
+        "city": "Marasesti",
+        "county": "Vrancea"
+    },
+    {
+        "city": "Beius",
+        "county": "Bihor"
+    },
+    {
+        "city": "Beclean",
+        "county": "Bistrita-Nasaud"
+    },
+    {
+        "city": "Urlati",
+        "county": "Prahova"
+    },
+    {
+        "city": "Otelu Rosu",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Strehaia",
+        "county": "Mehedinti"
+    },
+    {
+        "city": "Targu Frumos",
+        "county": "Iasi"
+    },
+    {
+        "city": "Orsova",
+        "county": "Mehedinti"
+    },
+    {
+        "city": "Sinaia",
+        "county": "Prahova"
+    },
+    {
+        "city": "Jibou",
+        "county": "Salaj"
+    },
+    {
+        "city": "Sovata",
+        "county": "Mures"
+    },
+    {
+        "city": "Costesti",
+        "county": "Arges"
+    },
+    {
+        "city": "Ianca",
+        "county": "Braila"
+    },
+    {
+        "city": "Lipova",
+        "county": "Arad"
+    },
+    {
+        "city": "Dolhasca",
+        "county": "Suceava"
+    },
+    {
+        "city": "Topoloveni",
+        "county": "Arges"
+    },
+    {
+        "city": "Murfatlar",
+        "county": "Constanta"
+    },
+    {
+        "city": "Nehoiu",
+        "county": "Buzau"
+    },
+    {
+        "city": "Flamanzi",
+        "county": "Botosani"
+    },
+    {
+        "city": "Covasna",
+        "county": "Covasna"
+    },
+    {
+        "city": "Alesd",
+        "county": "Bihor"
+    },
+    {
+        "city": "Valea lui Mihai",
+        "county": "Bihor"
+    },
+    {
+        "city": "Darabani",
+        "county": "Botosani"
+    },
+    {
+        "city": "Hateg",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Sangeorz-Bai",
+        "county": "Bistrita-Nasaud"
+    },
+    {
+        "city": "Titu",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Cristuru Secuiesc",
+        "county": "Harghita"
+    },
+    {
+        "city": "Harsova",
+        "county": "Constanta"
+    },
+    {
+        "city": "Liteni",
+        "county": "Suceava"
+    },
+    {
+        "city": "Nasaud",
+        "county": "Bistrita-Nasaud"
+    },
+    {
+        "city": "Podu Iloaiei",
+        "county": "Iasi"
+    },
+    {
+        "city": "Eforie",
+        "county": "Constanta"
+    },
+    {
+        "city": "Odobesti",
+        "county": "Vrancea"
+    },
+    {
+        "city": "Huedin",
+        "county": "Cluj"
+    },
+    {
+        "city": "Ineu",
+        "county": "Arad"
+    },
+    {
+        "city": "Salcea",
+        "county": "Suceava"
+    },
+    {
+        "city": "Seini",
+        "county": "Maramures"
+    },
+    {
+        "city": "Uricani",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Babadag",
+        "county": "Tulcea"
+    },
+    {
+        "city": "Bumbesti-Jiu",
+        "county": "Gorj"
+    },
+    {
+        "city": "Busteni",
+        "county": "Prahova"
+    },
+    {
+        "city": "Agnita",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Iernut",
+        "county": "Mures"
+    },
+    {
+        "city": "Baraolt",
+        "county": "Covasna"
+    },
+    {
+        "city": "Tasnad",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Roznov",
+        "county": "Neamt"
+    },
+    {
+        "city": "Babeni",
+        "county": "Valcea"
+    },
+    {
+        "city": "Negresti",
+        "county": "Vaslui"
+    },
+    {
+        "city": "Recas",
+        "county": "Timis"
+    },
+    {
+        "city": "Macin",
+        "county": "Tulcea"
+    },
+    {
+        "city": "Targu Carbunesti",
+        "county": "Gorj"
+    },
+    {
+        "city": "Chisineu-Cris",
+        "county": "Arad"
+    },
+    {
+        "city": "Siret",
+        "county": "Suceava"
+    },
+    {
+        "city": "Mihailesti",
+        "county": "Giurgiu"
+    },
+    {
+        "city": "Budesti",
+        "county": "Calarasi"
+    },
+    {
+        "city": "Plopeni",
+        "county": "Prahova"
+    },
+    {
+        "city": "Panciu",
+        "county": "Vrancea"
+    },
+    {
+        "city": "Calimanesti",
+        "county": "Valcea"
+    },
+    {
+        "city": "Fieni",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Somcuta Mare",
+        "county": "Maramures"
+    },
+    {
+        "city": "Intorsura Buzaului",
+        "county": "Covasna"
+    },
+    {
+        "city": "Zlatna",
+        "county": "Alba"
+    },
+    {
+        "city": "Anina",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Curtici",
+        "county": "Arad"
+    },
+    {
+        "city": "Nadlac",
+        "county": "Arad"
+    },
+    {
+        "city": "Dumbraveni",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Victoria",
+        "county": "Brasov"
+    },
+    {
+        "city": "Amara",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Patarlagele",
+        "county": "Buzau"
+    },
+    {
+        "city": "Techirghiol",
+        "county": "Constanta"
+    },
+    {
+        "city": "Pogoanele",
+        "county": "Buzau"
+    },
+    {
+        "city": "Ulmeni",
+        "county": "Maramures"
+    },
+    {
+        "city": "Turceni",
+        "county": "Gorj"
+    },
+    {
+        "city": "Campeni",
+        "county": "Alba"
+    },
+    {
+        "city": "Cehu Silvaniei",
+        "county": "Salaj"
+    },
+    {
+        "city": "Tautii-Magheraus",
+        "county": "Maramures"
+    },
+    {
+        "city": "Murgeni",
+        "county": "Vaslui"
+    },
+    {
+        "city": "Tismana",
+        "county": "Gorj"
+    },
+    {
+        "city": "Buzias",
+        "county": "Timis"
+    },
+    {
+        "city": "Segarcea",
+        "county": "Dolj"
+    },
+    {
+        "city": "Saveni",
+        "county": "Botosani"
+    },
+    {
+        "city": "Pancota",
+        "county": "Arad"
+    },
+    {
+        "city": "Ungheni",
+        "county": "Mures"
+    },
+    {
+        "city": "Sarmasu",
+        "county": "Mures"
+    },
+    {
+        "city": "Racari",
+        "county": "Dambovita"
+    },
+    {
+        "city": "Talmaciu",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Cajvana",
+        "county": "Suceava"
+    },
+    {
+        "city": "Vlahita",
+        "county": "Harghita"
+    },
+    {
+        "city": "Fundulea",
+        "county": "Calarasi"
+    },
+    {
+        "city": "Livada",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Faget",
+        "county": "Timis"
+    },
+    {
+        "city": "Teius",
+        "county": "Alba"
+    },
+    {
+        "city": "Bicaz",
+        "county": "Neamt"
+    },
+    {
+        "city": "Stei",
+        "county": "Bihor"
+    },
+    {
+        "city": "Insuratei",
+        "county": "Braila"
+    },
+    {
+        "city": "Lehliu Gara",
+        "county": "Calarasi"
+    },
+    {
+        "city": "Targu Bujor",
+        "county": "Galati"
+    },
+    {
+        "city": "Piatra-Olt",
+        "county": "Olt"
+    },
+    {
+        "city": "Horezu",
+        "county": "Valcea"
+    },
+    {
+        "city": "Deta",
+        "county": "Timis"
+    },
+    {
+        "city": "Ardud",
+        "county": "Satu Mare"
+    },
+    {
+        "city": "Balan",
+        "county": "Harghita"
+    },
+    {
+        "city": "Slanic",
+        "county": "Prahova"
+    },
+    {
+        "city": "Brezoi",
+        "county": "Valcea"
+    },
+    {
+        "city": "Sebis",
+        "county": "Arad"
+    },
+    {
+        "city": "Frasin",
+        "county": "Suceava"
+    },
+    {
+        "city": "Gataia",
+        "county": "Timis"
+    },
+    {
+        "city": "Potcoava",
+        "county": "Olt"
+    },
+    {
+        "city": "Miercurea Nirajului",
+        "county": "Mures"
+    },
+    {
+        "city": "Brosteni",
+        "county": "Suceava"
+    },
+    {
+        "city": "Novaci",
+        "county": "Gorj"
+    },
+    {
+        "city": "Saliste",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Copsa Mica",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Baneasa",
+        "county": "Constanta"
+    },
+    {
+        "city": "Baia de Arama",
+        "county": "Mehedinti"
+    },
+    {
+        "city": "Ciacova",
+        "county": "Timis"
+    },
+    {
+        "city": "Stefanesti",
+        "county": "Botosani"
+    },
+    {
+        "city": "Vanju Mare",
+        "county": "Mehedinti"
+    },
+    {
+        "city": "Geoagiu",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Rupea",
+        "county": "Brasov"
+    },
+    {
+        "city": "Sangeorgiu de Padure",
+        "county": "Mures"
+    },
+    {
+        "city": "Negru Voda",
+        "county": "Constanta"
+    },
+    {
+        "city": "Abrud",
+        "county": "Alba"
+    },
+    {
+        "city": "Isaccea",
+        "county": "Tulcea"
+    },
+    {
+        "city": "Baile Herculane",
+        "county": "Caras-Severin"
+    },
+    {
+        "city": "Milisauti",
+        "county": "Suceava"
+    },
+    {
+        "city": "Cavnic",
+        "county": "Maramures"
+    },
+    {
+        "city": "Fierbinti-Targ",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Salistea de Sus",
+        "county": "Maramures"
+    },
+    {
+        "city": "Balcesti",
+        "county": "Valcea"
+    },
+    {
+        "city": "Berbesti",
+        "county": "Valcea"
+    },
+    {
+        "city": "Predeal",
+        "county": "Brasov"
+    },
+    {
+        "city": "Ghimbav",
+        "county": "Brasov"
+    },
+    {
+        "city": "Azuga",
+        "county": "Prahova"
+    },
+    {
+        "city": "Ticleni",
+        "county": "Gorj"
+    },
+    {
+        "city": "Aninoasa",
+        "county": "Hunedoara"
+    },
+    {
+        "city": "Bucecea",
+        "county": "Botosani"
+    },
+    {
+        "city": "Slanic Moldova",
+        "county": "Bacau"
+    },
+    {
+        "city": "Baile Olanesti",
+        "county": "Valcea"
+    },
+    {
+        "city": "Miercurea Sibiului",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Sulina",
+        "county": "Tulcea"
+    },
+    {
+        "city": "Bechet",
+        "county": "Dolj"
+    },
+    {
+        "city": "Faurei",
+        "county": "Braila"
+    },
+    {
+        "city": "Ocna Sibiului",
+        "county": "Sibiu"
+    },
+    {
+        "city": "Baia de Aries",
+        "county": "Alba"
+    },
+    {
+        "city": "Ocnele Mari",
+        "county": "Valcea"
+    },
+    {
+        "city": "Cazanesti",
+        "county": "Ialomita"
+    },
+    {
+        "city": "Dragomiresti",
+        "county": "Maramures"
+    },
+    {
+        "city": "Beresti",
+        "county": "Galati"
+    },
+    {
+        "city": "Borsec",
+        "county": "Harghita"
+    },
+    {
+        "city": "Baile Govora",
+        "county": "Valcea"
+    },
+    {
+        "city": "Vascau",
+        "county": "Bihor"
+    },
+    {
+        "city": "Solca",
+        "county": "Suceava"
+    },
+    {
+        "city": "Nucet",
+        "county": "Bihor"
+    },
+    {
+        "city": "Baile Tusnad",
+        "county": "Harghita"
+    }
+]

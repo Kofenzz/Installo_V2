@@ -77,3 +77,5 @@ class ProfileForm(forms.ModelForm):
                        'style': 'width:100%'}),
             'user_type': forms.Select(attrs={'class': 'form-control ', 'style': 'width:100%'})
         }
+
+

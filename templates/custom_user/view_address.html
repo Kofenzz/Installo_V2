@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.first_name }}'s Address {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid text-center">
+        <h1 class="display-4">{{ user.first_name }}'s Address</h1> {# Name of category list #}
+    </div>
+    <br><br><br><br>
+
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group" style="padding: 10px;">
+
+                <a href="{% url 'view_profile' %}"
+                   class="list-group-item list-group-item-action ">
+                    Profile
+                </a>
+
+                <a href="{% url 'view_address' %}"
+                   class="list-group-item list-group-item-action active ">
+                    My Address
+                </a>
+
+                <a href="#"
+                   class="list-group-item list-group-item-action ">
+                    My Orders
+                </a>
+
+                <a href="{% url 'logout' %}"
+                   class="list-group-item list-group-item-action ">
+                    Logout
+                </a>
+
+            </div>
+        </div>
+        <br><br><br>
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Address</h3>
+                </div>
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Address Name</th>
+                            <th class="text-center">Recipent Name</th>
+                            <th class="text-center">Address line 1</th>
+                            <th class="text-center">Address line 2</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Postal Code</th>
+                            <th class="text-center"></th>
+
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for address in addresses %}
+                            <tr>
+                                <td class="text-center">{{ address.user.address_name }}</td>
+                                <td class="text-center">{{ address.recipient_name }}</td>
+                                <td class="text-center">{{ address.street_address1 }}</td>
+                                <td class="text-center">{{ address.street_address2 }}</td>
+                                <td class="text-center">{{ address.city }}</td>
+                                <td class="text-center">{{ address.postal_code }}</td>
+                                <td class="text-center">
+                                    <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        More Actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Update</a></li>
+                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}
