@@ -39,6 +39,8 @@
         <br><br><br>
 
         <div class="col-lg-6">
+            <a href="#"
+               class="btn btn-outline-primary col-lg-12">Add new address</a>
 
             <div class="card">
                 <div class="card-header">
@@ -72,15 +74,15 @@
                                 <td class="text-center">{{ address.postal_code }}</td>
                                 <td class="text-center">
                                     <div class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                        More Actions
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Update</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                    </ul>
-                                </div>
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                            More Actions
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Update</a></li>
+                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
 
                             </tr>
@@ -93,5 +95,6 @@
 
         </div>
     </div>
+    <br><br><br>
 
 {% endblock %}
