@@ -5,20 +5,42 @@
 {% block content %}
 
     <div class="container-fluid text-center">
-        <h1 class="display-4">{{ category.name }}</h1> {# Name of category list #}
+        <h1 class="display-4">{{user_profile.first_name}}'s profile</h1> {# Name of category list #}
     </div>
     <br><br><br><br>
+
+
     <div class="row">
         <div class="col-lg-3">
             <div class="list-group" style="padding: 10px;">
-                <a href="#"
+
+                <a href="{% url 'view_profile' %}"
                    class="list-group-item list-group-item-action active">
-                    {#                        class="list-group-item list-group-item-action {# {% if cat.slug == category.slug %}active{% endif %}#}
                     Profile
+                </a>
+
+                <a href="#"
+                   class="list-group-item list-group-item-action ">
+                    My Address
+                </a>
+
+                <a href="#"
+                   class="list-group-item list-group-item-action ">
+                    My Orders
+                </a>
+
+                <a href="{% url 'logout' %}"
+                   class="list-group-item list-group-item-action ">
+                    Logout
                 </a>
 
             </div>
         </div>
         <br><br><br>
+
+        <div class="col-lg-6">
+        {% include 'custom_user/profile_menu/profile_detail.html' %}
+        </div>
     </div>
+
 {% endblock %}

@@ -1,14 +1,15 @@
 from django.contrib import messages  # success message display on login page
 from django.contrib.auth import logout as logouts
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from custom_user.forms import UserForm, LoginForm, ProfileForm
-from custom_user.models import User
+from custom_user.models import User, Profile
 
 
 class SignupView(CreateView):
@@ -52,7 +53,7 @@ def edit_profile(request):
     user_profile = request.user.profile
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, instance=user_profile)
 
         if form.is_valid():
             # Update the Profile model with form data
@@ -70,6 +71,11 @@ def edit_profile(request):
 
     else:
         # Initialize the form without instance argument
-        form = ProfileForm()
+        form = ProfileForm(instance=user_profile)
 
     return render(request, 'custom_user/edit_profile.html', {'edit_profile': form})
+
+
+class ProfileDetailView(LoginRequiredMixin, DetailView):
+    template_name = 'custom_user/profile_menu/profile_detail.html'
+    model = Profile

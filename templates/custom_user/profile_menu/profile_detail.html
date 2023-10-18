@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="text-center">Profile</h3>
+    </div>
+
+    <div class="body">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Phone Number</th>
+                <th class="text-center">Address 1</th>
+                <th class="text-center">Address 2</th>
+                <th class="text-center">Type</th>
+                <th class="text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">{{ user.profile.first_name }}</td>
+                <td class="text-center">{{ user.profile.last_name }}</td>
+                <td class="text-center">{{ user.email }}</td>
+                <td class="text-center">{{ user.profile.phone_number }}</td>
+                <td class="text-center">{{ user.profile.address_1 }}</td>
+                <td class="text-center">{{ user.profile.address_2 }}</td>
+                <td class="text-center">{{ user.profile.user_type }}</td>
+                {% if user.profile.user_type == 'Individual' %}
+                <td class="text-center"><a href="{% url 'edit_profile'%}"
+                                        class="btn btn-outline-secondary">Update</a></td>
+                {% else %}
+                    <td>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More Actions
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Update</a> </li>
+                        <li><a class="dropdown-item" href="#">Add Company Details</a> </li>
+                    </ul>
+                </div>
+                {% endif %}
+            </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
