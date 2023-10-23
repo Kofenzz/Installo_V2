@@ -23,8 +23,14 @@ def get_product(request):
 
 def random_products(request):
     thirty_days_ago = datetime.now() - timedelta(days=30)
-    products = Products.objects.filter(Q(created_at__range=(thirty_days_ago, datetime.now())))
-    random_sample = random.sample(list(products), 4)  # Change 3 to the desired number of random products
+    recent_products = Products.objects.filter(created_at__range=(thirty_days_ago, datetime.now()))
+
+    if recent_products.count() > 0:
+        random_sample = random.sample(list(recent_products), 4)
+    else:
+        all_products = Products.objects.all()
+        random_sample = random.sample(list(all_products), 4)
+
     return {'random_products': random_sample}
 
 

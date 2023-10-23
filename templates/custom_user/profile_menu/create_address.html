@@ -9,12 +9,12 @@
                 <br><br>
                 <div class="card">
                     <div class="card-header text-center">
-                        <h2>Edit Address</h2>
+                        <h2>Add Address</h2>
                     </div>
                     <form method="post">
                         {% csrf_token %}
                         <div class="card-body">
-                            {{ edit_address.as_p }}
+                            {{ form.as_p}}
                         </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-primary">Save Changes</button>

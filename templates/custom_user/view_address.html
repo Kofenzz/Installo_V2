@@ -39,9 +39,9 @@
         <br><br><br>
 
         <div class="col-lg-6">
-            <a href="#"
+            <a href="{% url 'add_address' %}"
                class="btn btn-outline-primary col-lg-12">Add new address</a>
-
+            {% if addresses %}
             <div class="card">
                 <div class="card-header">
                     <h3 class="text-center">Address</h3>
@@ -66,7 +66,7 @@
                         <tbody>
                         {% for address in addresses %}
                             <tr>
-                                <td class="text-center">{{ address.user.address_name }}</td>
+                                <td class="text-center">{{ address.address_name }}</td>
                                 <td class="text-center">{{ address.recipient_name }}</td>
                                 <td class="text-center">{{ address.street_address1 }}</td>
                                 <td class="text-center">{{ address.street_address2 }}</td>
@@ -79,8 +79,8 @@
                                             More Actions
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Update</a></li>
-                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'edit_address' address.id %}">Update</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'delete_address' address.id %}">Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
@@ -91,6 +91,12 @@
                     </table>
                 </div>
             </div>
+{#                {% else %}#}
+{#                <br><br>#}
+{#                <div>#}
+{#                <h2 class="text-center"> No Addresses added yet!</h2>#}
+{#                </div>#}
+        {% endif %}
 
 
         </div>
