@@ -5,6 +5,7 @@ from django.db import models
 
 from category.models import Category
 from custom_user.models import User
+from orders.models import Order
 
 
 class Products(models.Model):
@@ -32,6 +33,7 @@ class Products(models.Model):
 class Cart(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, null=True, blank=True, on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
 
     class Meta:

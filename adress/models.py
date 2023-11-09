@@ -12,6 +12,7 @@ class City(models.Model):
     def __str__(self):
         return f'{self.name}, {self.county}'
 
+
 #
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
