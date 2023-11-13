@@ -2,12 +2,69 @@
 
 {% block title %}Checkout{% endblock %}
 
-
 {% block content %}
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="p-2">
+                    <h4>Checkout</h4>
+                </div>
+                {% if items %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'product-detail' item.product.slug item.product.id %}">
+                                        <img class="rounded" src="{{ item.product.image.url }}" width="70"/>
+                                    </a>
+                                </td>
+                                <td>{{ item.product.name }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>{{ item.product.price }} RON</td>
+                                <td>{{ item.price }} RON</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="p-2 bg-white rounded">
+                                <h4 class="btn btn-success btn-lg" disabled
+                                    style="pointer-events: none; width: 100%; margin-left: 0;">Grand
+                                    Total: {{ cart.total_price }} RON</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="p-2 bg-white rounded">
+                                <form action="{% url 'checkout' %}" method="post" style="width: 100%; margin-left: 0;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-warning btn-lg pay-button"
+                                            style="width: 100%;">Make Order
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
-    {% include 'include/navbar.html' %}
-
-
-
-
+                {% else %}
+                    <div class="alert alert-info" role="alert">
+                        No Items Added Yet!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

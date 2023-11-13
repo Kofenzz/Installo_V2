@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.first_name }}'s Profile{% endblock %}
+
+{% block content %}
+<div class="container-fluid text-center">
+    <h1 class="display-4">{{ user.first_name }}'s Profile</h1>
+</div>
+<br><br><br><br>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="list-group" style="padding: 10px;">
+
+                <a href="{% url 'view_profile' %}"
+                   class="list-group-item list-group-item-action ">
+                    Profile
+                </a>
+
+                <a href="{% url 'view_address' %}"
+                   class="list-group-item list-group-item-action  ">
+                    My Address
+                </a>
+
+                <a href="{% url 'view-orders' %}"
+                   class="list-group-item list-group-item-action active ">
+                    My Orders
+                </a>
+
+                <a href="{% url 'logout' %}"
+                   class="list-group-item list-group-item-action ">
+                    Logout
+                </a>
+
+            </div>
+    </div>
+
+    <div class="col-lg-6">
+        {% if orders %}
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">My Orders</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order.order_number }}</td>
+                            <td>{{ order.created_at }}</td>
+                            <td>{{ order.status }}</td>
+                            <td>
+                                <a href="{% url 'order_details' order.id %}" class="btn btn-primary">View Details</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% else %}
+        <h2 class="text-center">No Orders Placed Yet!</h2>
+        {% endif %}
+    </div>
+</div>
+    <br><br><br>
+{% endblock %}

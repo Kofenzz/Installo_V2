@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="text-center">
+        <h2>Thank You {{ first_name }} for Your Order!</h2>
+        <p>Your order number is {{ order_number }}.</p>
+    </div>
+</div>
+{% endblock %}

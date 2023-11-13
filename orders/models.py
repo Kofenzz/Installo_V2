@@ -6,13 +6,11 @@ from adress.models import Address
 from custom_user.models import User
 
 
-
 class Order(models.Model):
-
     STRATUS_CHOICES = (
-        ('Pending','Pending'),
+        ('Pending', 'Pending'),
         ('In Progress', 'In Progress'),
-        ('Complete','Complete')
+        ('Complete', 'Complete')
     )
     order_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -24,6 +22,10 @@ class Order(models.Model):
     def __str__(self):
         return f'Order {self.pk}'
 
+    def get_total_price(self):
+        return sum(item.get_total_price() for item in self.item.all())
+
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, related_name='item', on_delete=models.CASCADE)
@@ -33,3 +35,6 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f'Order item {self.pk}'
+
+    def get_total_price(self):
+        return self.quantity * self.product.price
