@@ -80,33 +80,5 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
     template_name = 'custom_user/profile_menu/profile_detail.html'
     model = Profile
 
-# @login_required()
-# def edit_address(request):
-#     print(request.user.profile)
-#     print(request.user)
-#     print(request.user.address)
-#     user_address = request.user.address
-#
-#     if request.method == 'POST':
-#         form = AddressForm(request.POST,)
-#
-#         if form.is_valid():
-#             # Update the Address model with form data
-#             user_address.address_name = form.cleaned_data['address_name']
-#             user_address.address_name = user_address.address_name.title()
-#             user_address.recipient_name = form.cleaned_data['recipient_name']
-#             user_address.recipient_name = user_address.recipient_name.title()
-#             user_address.street_address1 = form.cleaned_data['street_address1']
-#             user_address.street_address1 = user_address.street_address1.lower()
-#             user_address.street_address2 = form.cleaned_data['street_address2']
-#             user_address.street_address2 = user_address.street_address2.lower()
-#             user_address.save()
-#
-#             return redirect('view_address')
-#
-#     else:
-#         # Initialize the form without instance argument
-#         form = ProfileForm()
-#
-#     return render(request, 'custom_user/profile_menu/edit_address.html', {'edit_address': form})
+
 
