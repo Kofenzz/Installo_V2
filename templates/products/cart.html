@@ -53,7 +53,7 @@
                             </h6>
                         </td>
                         <td>
-                            <h6 class="text-grey" id="amount_{{ item.id }}">{{ item.price }} RON
+                            <h6 class="text-grey amount" id="amount_{{ item.id }}">{{ item.price }} RON
                             </h6>
                         </td>
                         <td>
@@ -67,7 +67,7 @@
             </table>
             <br><br>
             <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
-                <h4 class="btn btn-success btn-block btn-lg ml-2" disabled style="pointer-events: none;">Grand Total
+                <h4 class="btn btn-success btn-block btn-lg ml-2" id="grand_total" disabled style="pointer-events: none;">Grand Total
                     : {{ cart.total_price }} RON
                 </h4>
             </div>

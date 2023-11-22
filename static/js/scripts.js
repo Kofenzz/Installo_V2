@@ -66,6 +66,19 @@ addToCartButtons.forEach(button => {
 
 // Function to update the quantity when the "Decrease Quantity" button is clicked
 
+function updateGrandTotal() {
+    let total = 0;
+    document.querySelectorAll('.amount').forEach(amountElement => {
+        let amount = parseFloat(amountElement.innerText.replace(' RON', ''));
+        total += amount;
+    });
+
+    document.getElementById('grand_total').innerText = `Grand Total: ${total.toFixed(0)} RON`;
+}
+
+
+
+
 function increase_or_decrease(data, item_id) {
 
 
@@ -100,6 +113,7 @@ function increase_or_decrease(data, item_id) {
                 let quantity = $("#quantity-" + item_id).val();
                 let amount = parseInt(unit_price) * parseInt(quantity);
                 $("#amount_" + item_id).text(amount + " RON");
+                updateGrandTotal();
             })
             .catch(error => {
                 console.log(error)
