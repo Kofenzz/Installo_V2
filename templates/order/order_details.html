@@ -23,13 +23,13 @@
                 <tr>
                     <td>{{ item.product.name }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.price }}</td>
-                    <td>{{ item.total_price }}</td>
+                    <td>{{ item.product.price }} RON</td>
+                    <td>{{ item.total_price }} RON </td>
                 </tr>
             {% endfor %}
             <tr>
                 <td colspan="3" class="text-right font-weight-bold">Grand Total:</td>
-                <td class="font-weight-bold">{{ order.get_total_price }}</td>
+                <td class="font-weight-bold">{{ order.get_total_price }} RON</td>
             </tr>
             </tbody>
         </table>
